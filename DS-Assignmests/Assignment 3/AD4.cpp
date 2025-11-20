@@ -1,21 +1,21 @@
-// class Solution {
-// public:
-//     vector<int> dailyTemperatures(vector<int>& temperatures)
-//     {
-//         int n = temperatures.size();
-//         vector<int> val(n,0);
-//         stack<int> s;
-
-//         for(int i = 0; i < n; i++)
-//         {
-//             while(!s.empty() && (temperatures[i] > temperatures[s.top()]))
-//             {
-//                 int index = s.top();
-//                 s.pop();
-//                 val[index] = i - index;
-//             }
-//             s.push(i);
-//         }
-//         return val;
-//     }
-// };
+class Solution {
+public:
+    vector<int> dailyTemperatures(vector<int>& temperatures) {
+        vector<bool> found(temperatures.size(), false);
+        vector<int> answer;
+        for(int i=0;i<temperatures.size();i++){
+            for(int j=i+1;j<temperatures.size();j++){
+                if(temperatures[j]>temperatures[i]) {
+                    found[i] = true;
+                    answer.push_back(j-i);
+                    break;
+                }
+            }
+            if(!found[i]) {
+                answer.push_back(0);
+                found[i] = true;
+            }
+        }
+        return answer;
+    }
+};
