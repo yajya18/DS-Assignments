@@ -22,10 +22,10 @@ class Tree{
             Tree* curr = root;
             while(curr==nullptr) {
                 if(n==curr->data) return true;
-                if(n<curr->data) searchit(n, curr->left);
-                else searchit(n, curr->right);
-                return false;
+                if(n<curr->data) curr = curr->left;
+                else curr = curr->right;
             }
+            return false;
         }
         int max(Tree* &root){
             Tree* temp = root;
