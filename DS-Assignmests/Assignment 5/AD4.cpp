@@ -11,9 +11,6 @@ Node* rotateLeft(Node* head, int k) {
     }
 
     k = k % n;
-    if (k == 0) {
-        return head;
-    }
 
     Node* newTail = head;
     for (int i = 0; i < k - 1; i++) {

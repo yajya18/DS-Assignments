@@ -3,7 +3,7 @@
 #include<stack>
 using namespace std;
 class Solution {
-  public:
+    public:
     vector<int> nextLargerElement(vector<int>& arr) 
     {
         int n = arr.size();

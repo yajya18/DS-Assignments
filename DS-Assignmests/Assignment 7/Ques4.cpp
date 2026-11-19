@@ -19,5 +19,8 @@ public:
 };
 
 int main() {
+    bool x;
+    if(x) cout<<"true";
+    else cout<<"false";
     return 0;
 }

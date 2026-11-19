@@ -56,9 +56,8 @@ class Tree{
             else{
                 Tree* temp = root->left;
                 while(temp->right!=nullptr) temp = temp->right;
-                int max = temp->data;
-                root->data = max;
-                deleteNode(root->left, max);
+                root->data=temp->data;
+                deleteNode(root->left, root->data);
             }
         }
         else if(n<root->data){
